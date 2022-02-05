@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="436" height="92" viewBox="0 0 436 92">
+  <g id="Group_4" data-name="Group 4" transform="translate(-32 -360)">
+    <text id="Im_geSafe" data-name="Im  geSafe" transform="translate(32 437)" fill="#040b51" font-size="81" font-family="QuicksandBold-Regular, Quicksand"><tspan x="0" y="0" xml:space="preserve">Im  geSafe</tspan></text>
+    <g id="Group_1" data-name="Group 1" transform="translate(131.766 389.934)">
+      <g id="Icon_feather-image" data-name="Icon feather-image" transform="translate(27.845 0) rotate(49)">
+        <path id="Path_1" data-name="Path 1" d="M4.1,0H32.8a4.1,4.1,0,0,1,4.1,4.1V32.8a4.1,4.1,0,0,1-4.1,4.1H4.1A4.1,4.1,0,0,1,0,32.8V4.1A4.1,4.1,0,0,1,4.1,0Z" transform="translate(0 0)" fill="none" stroke="#19dcdc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path id="Path_2" data-name="Path 2" d="M6.149,3.075A3.075,3.075,0,1,1,3.075,0,3.075,3.075,0,0,1,6.149,3.075Z" transform="translate(8.199 8.199)" fill="none" stroke="#19dcdc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path id="Path_3" data-name="Path 3" d="M32.8,10.249,22.547,0,0,22.547" transform="translate(4.099 14.348)" fill="none" stroke="#19dcdc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>
