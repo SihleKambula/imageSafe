@@ -28,7 +28,7 @@ const Login = () => {
             </div>
             <div className='mt-4'>
               <label htmlFor='password' className='sr-only'>
-                Email address
+                Password
               </label>
               <input
                 id='password'
