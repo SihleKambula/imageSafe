@@ -2,6 +2,7 @@ import React from "react";
 import Images from "../../components/Images";
 import Navbar from "../../components/Navbar";
 import Masonry from "react-masonry-component";
+import ImageModal from "../../components/Modal";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
           <Images url='https://images.unsplash.com/photo-1551791738-61d1f75d6166?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8d29sdmVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' />
           <Images url='https://images.unsplash.com/photo-1551791738-61d1f75d6166?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8d29sdmVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' />
         </Masonry>
+        <ImageModal />
       </main>
     </>
   );
