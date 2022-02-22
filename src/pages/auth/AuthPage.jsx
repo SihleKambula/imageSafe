@@ -3,7 +3,7 @@ import Login from "./Login";
 import Signup from "./SignUp";
 
 const Authpage = () => {
-  return <Signup />;
+  return <Login />;
 };
 
 export default Authpage;
