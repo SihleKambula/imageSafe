@@ -1,13 +1,12 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { LogoutIcon, PlusIcon } from "@heroicons/react/outline";
-import { handleSignOut } from "../database/auth";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import { useDispatch } from "react-redux";
+import { logout, reset } from "../features/auth/authSlice";
 
 export default function Navbar() {
+  const dispatch = useDispatch();
+
   return (
     <Disclosure as='nav' className='bg-white'>
       {() => (
@@ -31,7 +30,10 @@ export default function Navbar() {
                   <PlusIcon className='h-6 w-6' aria-hidden='true' />
                 </button>
                 <button
-                  onClick={handleSignOut}
+                  onClick={() => {
+                    dispatch(logout());
+                    dispatch(reset());
+                  }}
                   type='button'
                   className=' ml-2 p-1 text-gray-500 focus:outline-none'
                 >
