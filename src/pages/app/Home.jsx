@@ -3,8 +3,12 @@ import Images from "../../components/Images";
 import Navbar from "../../components/Navbar";
 import Masonry from "react-masonry-component";
 import ImageModal from "../../components/Modal";
+import { Navigate } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ user }) => {
+  // if (!user) {
+  //   return <Navigate to='/login' replace />;
+  // }
   return (
     <>
       <Navbar />

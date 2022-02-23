@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { handleEmailAndPasswordSignUp } from "../../database/auth";
 
 const Signup = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <div className='h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-100'>
       <div>
@@ -18,8 +21,10 @@ const Signup = () => {
                 Email address
               </label>
               <input
+                onChange={(e) => setEmail(e.target.value)}
                 id='email-address'
                 name='email'
+                value={email}
                 type='email'
                 autoComplete='email'
                 required
@@ -32,9 +37,12 @@ const Signup = () => {
                 Password
               </label>
               <input
+                onChange={(e) => setPassword(e.target.value)}
                 id='password'
+                value={password}
                 name='password'
                 type='password'
+                autoComplete='new-password'
                 required
                 className='appearance-none rounded  block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm'
                 placeholder='Password'
@@ -60,13 +68,13 @@ const Signup = () => {
               Login
             </Link>
           </div>
-          <button
-            type='submit'
-            className=' mt-2 py-2 px-4 bg-indigo-700 text-white font-bold border-none rounded w-full '
-          >
-            Sign Up
-          </button>
         </form>
+        <button
+          onClick={() => handleEmailAndPasswordSignUp(email, password)}
+          className=' mt-2 py-2 px-4 bg-indigo-700 text-white font-bold border-none rounded w-full '
+        >
+          Sign Up
+        </button>
       </div>
     </div>
   );

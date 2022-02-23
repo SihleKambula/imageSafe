@@ -1,9 +1,10 @@
-import { signInAnonymously } from "firebase/auth";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { handleAnonymousSignIn } from "../../database/auth";
+import { handleUserLogin } from "../../database/auth";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <div className='h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-100'>
       <div>
@@ -13,7 +14,7 @@ const Login = () => {
           alt='image safe'
         />
         {/* <h2 className='mt-6 text-center text-3xl  text-gray-400 '>Login</h2> */}
-        <form className='mt-8 space-y-6'>
+        <div className='mt-8 space-y-6'>
           <div className='rounded-md shadow-sm'>
             <div>
               <label htmlFor='email-address' className='sr-only'>
@@ -21,7 +22,9 @@ const Login = () => {
               </label>
               <input
                 id='email-address'
+                onChange={(e) => setEmail(e.target.value)}
                 name='email'
+                value={email}
                 type='email'
                 autoComplete='email'
                 required
@@ -34,7 +37,9 @@ const Login = () => {
                 Password
               </label>
               <input
+                value={password}
                 id='password'
+                onChange={(e) => setPassword(e.target.value)}
                 name='password'
                 type='password'
                 required
@@ -52,9 +57,9 @@ const Login = () => {
               Sign up
             </Link>
           </div>
-        </form>{" "}
+        </div>
         <button
-          onClick={handleAnonymousSignIn}
+          onClick={() => handleUserLogin(email, password)}
           type='submit'
           className=' mt-2 py-2 px-4 bg-indigo-900 text-white font-bold border-none rounded w-full  hover:bg-indigo-700 '
         >
