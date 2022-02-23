@@ -36,7 +36,7 @@ const Login = () => {
             alt='image safe'
           />
           {/* <h2 className='mt-6 text-center text-3xl  text-gray-400 '>Login</h2> */}
-          <div className='mt-8 space-y-6'>
+          <form className='mt-8 space-y-6'>
             <div className='rounded-md shadow-sm'>
               <div>
                 <label htmlFor='email-address' className='sr-only'>
@@ -59,6 +59,7 @@ const Login = () => {
                   Password
                 </label>
                 <input
+                  autoComplete='current-password'
                   value={password}
                   id='password'
                   onChange={(e) => setPassword(e.target.value)}
@@ -79,7 +80,7 @@ const Login = () => {
                 Sign up
               </Link>
             </div>
-          </div>
+          </form>
           <button
             onClick={handleSubmit}
             type='submit'

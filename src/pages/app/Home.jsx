@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Images from "../../components/Images";
 import Navbar from "../../components/Navbar";
 import Masonry from "react-masonry-component";
 import ImageModal from "../../components/Modal";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const { user } = useSelector((state) => state.auth);
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
+  }, [user, navigate]);
+
   return (
     <>
       <Navbar />
