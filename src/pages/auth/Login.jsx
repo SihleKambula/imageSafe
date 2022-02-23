@@ -1,5 +1,7 @@
+import { signInAnonymously } from "firebase/auth";
 import React from "react";
 import { Link } from "react-router-dom";
+import { handleAnonymousSignIn } from "../../database/auth";
 
 const Login = () => {
   return (
@@ -50,13 +52,14 @@ const Login = () => {
               Sign up
             </Link>
           </div>
-          <button
-            type='submit'
-            className=' mt-2 py-2 px-4 bg-indigo-900 text-white font-bold border-none rounded w-full  hover:bg-indigo-700 '
-          >
-            Login
-          </button>
-        </form>
+        </form>{" "}
+        <button
+          onClick={handleAnonymousSignIn}
+          type='submit'
+          className=' mt-2 py-2 px-4 bg-indigo-900 text-white font-bold border-none rounded w-full  hover:bg-indigo-700 '
+        >
+          Login
+        </button>
       </div>
     </div>
   );
