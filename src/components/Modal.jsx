@@ -1,14 +1,10 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { ExclamationIcon } from "@heroicons/react/outline";
-import Images from "./Images";
 
-export default function ImageModal() {
-  const [open, setOpen] = useState(true);
-
+export default function ImageModal({ open, setOpen, imageUrl }) {
   const cancelButtonRef = useRef(null);
-
+  const downloadButton = useRef(null);
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
@@ -56,16 +52,29 @@ export default function ImageModal() {
                       Download Image
                     </Dialog.Title>
                     <div className='mt-2'>
-                      <img src='https://images.unsplash.com/photo-1572363420552-058bd41af8c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d29sdmVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' />
+                      <img src={imageUrl} alt='imageName' />
                     </div>
                   </div>
                 </div>
               </div>
               <div className='bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse'>
+                <a
+                  href={imageUrl}
+                  download
+                  target='_blank'
+                  rel='noreferrer'
+                  style={{ display: "none" }}
+                  ref={downloadButton}
+                >
+                  download
+                </a>
                 <button
                   type='button'
                   className='w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-900 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none  sm:ml-3 sm:w-auto sm:text-sm'
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    downloadButton.current.click();
+                    setOpen(false);
+                  }}
                 >
                   Download
                 </button>

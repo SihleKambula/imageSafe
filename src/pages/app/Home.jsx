@@ -11,6 +11,8 @@ import { DB } from "../../database/firebase";
 const Home = () => {
   const navigate = useNavigate();
   const [images, setImages] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
+  const [open, setOpen] = useState(false);
   const { user } = useSelector((state) => state.auth);
   useEffect(() => {
     if (!user) {
@@ -35,7 +37,15 @@ const Home = () => {
           {!images && <p>No Images</p>}
           {images &&
             images.images.map((image, index) => (
-              <Images url={image} key={index} />
+              <div
+                key={index}
+                onClick={() => {
+                  setImageUrl(image);
+                  setOpen(true);
+                }}
+              >
+                <Images url={image} />
+              </div>
             ))}
           {/* <Images url='https://images.unsplash.com/photo-1572363420552-058bd41af8c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8d29sdmVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' />
           <Images url='https://images.unsplash.com/photo-1551791738-61d1f75d6166?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8d29sdmVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' />
@@ -44,7 +54,7 @@ const Home = () => {
           <Images url='https://images.unsplash.com/photo-1598823440012-db3cfcc98ce9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8d29sdmVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' />
           <Images url='https://images.unsplash.com/photo-1510853675132-58241c941e4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHdvbHZlc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60' /> */}
         </Masonry>
-        {/* <ImageModal /> */}
+        <ImageModal open={open} setOpen={setOpen} imageUrl={imageUrl} />
       </main>
     </>
   );
