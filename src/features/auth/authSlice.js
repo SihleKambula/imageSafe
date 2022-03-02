@@ -4,6 +4,7 @@ import {
   handleSignOut,
   handleUserLogin,
 } from "../../database/auth";
+import { addUser } from "../../database/database";
 
 const user = JSON.parse(localStorage.getItem("user"));
 
@@ -13,7 +14,9 @@ export const userSignUp = createAsyncThunk(
   async (userData, thunkAPI) => {
     try {
       const { email, password } = userData;
-      return await handleEmailAndPasswordSignUp(email, password);
+      const user = await handleEmailAndPasswordSignUp(email, password);
+      await addUser(user.uid);
+      return user;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.code);
     }
