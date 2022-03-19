@@ -13,7 +13,7 @@ export const addUser = async (userID) => {
   });
 };
 
-// used in storage
+// used in storage for adding url link
 export const updateUserDoc = async (url) => {
   const userID = auth.currentUser.uid;
   const collectionRef = collection(DB, "users");

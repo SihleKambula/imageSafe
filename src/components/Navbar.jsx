@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { Disclosure } from "@headlessui/react";
 import { LogoutIcon, PlusIcon } from "@heroicons/react/outline";
 import { useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
 import { uploadImage } from "../database/storage";
+import { toast, ToastContainer } from "react-toastify";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -13,13 +14,18 @@ export default function Navbar() {
     fileUpLoad.current.click();
   }
   function handleImageChange(image) {
-    uploadImage(image);
+    toast.promise(uploadImage(image), {
+      pending: "Uploading image",
+      success: "Image uploaded",
+      error: "Failed to upload",
+    });
   }
 
   return (
     <Disclosure as='nav' className='bg-white'>
       {() => (
         <>
+          <ToastContainer position='top-center' autoClose={2000} />
           <div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
             <div className='relative flex items-center justify-between h-16'>
               <div className='flex-1 flex items-center justify-start'>

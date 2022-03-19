@@ -4,7 +4,11 @@ import { storage } from "./firebase";
 
 export const uploadImage = async (imageFile) => {
   const imageref = ref(storage, imageFile.name);
-  await uploadBytes(imageref, imageFile);
-  const url = await getDownloadURL(imageref);
-  await updateUserDoc(url);
+  try {
+    await uploadBytes(imageref, imageFile);
+    const url = await getDownloadURL(imageref);
+    await updateUserDoc(url);
+  } catch (error) {
+    return error.code;
+  }
 };
