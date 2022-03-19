@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { reset, logUserIn } from "../../features/auth/authSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../components/Loading";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,7 +15,7 @@ const Login = () => {
   );
 
   useEffect(() => {
-    if (isError) console.log(message);
+    if (isError) return message;
     if (isSuccess || user) navigate("/");
     dispatch(reset());
   }, [user, isError, navigate, dispatch, isSuccess]);
@@ -27,7 +28,7 @@ const Login = () => {
   return (
     <div className='h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-100'>
       {isLoading ? (
-        <p>Loading</p>
+        <Loading />
       ) : (
         <div>
           <img

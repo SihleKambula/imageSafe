@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/app/Home";
-import Authpage from "./pages/auth/AuthPage";
+import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/SignUp";
 
 const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/login' element={<Authpage />} />
+      <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
     </Routes>
   );
