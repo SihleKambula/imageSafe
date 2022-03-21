@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { reset, logUserIn } from "../../features/auth/authSlice";
 import { useSelector, useDispatch } from "react-redux";
@@ -9,10 +9,9 @@ import { toast, ToastContainer } from "react-toastify";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user, isLoading, isSuccess, isError, message } = useSelector(
+  const { user, isLoading, isSuccess, isError } = useSelector(
     (state) => state.auth
   );
 

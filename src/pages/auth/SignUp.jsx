@@ -13,7 +13,7 @@ const Signup = () => {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user, isLoading, isSuccess, isError, message } = useSelector(
+  const { user, isLoading, isSuccess, isError } = useSelector(
     (state) => state.auth
   );
 
@@ -24,7 +24,7 @@ const Signup = () => {
 
   // Submit
   function handleSubmit() {
-    if (password != passwordConfirm) {
+    if (password !== passwordConfirm) {
       return setError(true);
     }
     const userData = { email, password };
@@ -53,7 +53,7 @@ const Signup = () => {
           <img
             src='/assets/logo.svg'
             className=' mx-auto h-20  w-auto '
-            alt='image safe'
+            alt='logo'
           />
 
           <form className='mt-8 space-y-6'>
@@ -95,6 +95,8 @@ const Signup = () => {
                   Confirm password
                 </label>
                 <input
+                  onChange={(e) => setPasswordConfirm(e.target.value)}
+                  value={passwordConfirm}
                   id='confirm'
                   name='confirm'
                   type='password'

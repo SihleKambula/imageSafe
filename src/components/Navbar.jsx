@@ -33,7 +33,7 @@ export default function Navbar() {
                   <img
                     className=' h-8 w-auto'
                     src='./assets/logo.svg'
-                    alt='Image Safe'
+                    alt='logo'
                   />
                 </div>
               </div>
