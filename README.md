@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Images Safe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Image Safe.png](Images%20Saf%20c423a/Image_Safe.png)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+An application that allows you to save (on the cloud) and download your images. The images sync between your mobile phone and desktop. Good bye cable transfer, hello Image Safe 😃.
 
-### `npm start`
+### Mobile Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React Native
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Firebase
 
-### `npm test`
+Redux 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React Navigation
 
-### `npm run build`
+### Web Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ReactJS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+React Router 6
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Redux
 
-### `npm run eject`
+Firebase
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Tailwindcss
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Aim
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To save images on the cloud and access them between devices.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## User Experience and App Architect
 
-## Learn More
+How the user will use the application and the application tree design.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![User Flow](Images%20Saf%20c423a/Artboard__1.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+User Flow
 
-### Code Splitting
+![Application bird eye view](Images%20Saf%20c423a/App_arch.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Application bird eye view
 
-### Analyzing the Bundle Size
+## UI design phase
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Font Family:  ⇒ Quicksand
 
-### Making a Progressive Web App
+Primary Color ⇒ #040B51
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Secondary Color ⇒ #19DCDC
 
-### Advanced Configuration
+![Mobile Design](Images%20Saf%20c423a/Artboard__2.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Mobile Design
 
-### Deployment
+![Web Design](Images%20Saf%20c423a/Artboard__3.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Web Design
 
-### `npm run build` fails to minify
+## Database design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![ImageSafe DB.png](Images%20Saf%20c423a/ImageSafe_DB.png)
