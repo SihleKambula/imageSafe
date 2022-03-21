@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 import { reset, userSignUp } from "../../features/auth/authSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import Loading from "../../components/Loading";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user, isLoading, isSuccess, isError, message } = useSelector(
@@ -14,20 +18,36 @@ const Signup = () => {
   );
 
   useEffect(() => {
-    if (isError) console.log(message);
     if (isSuccess || user) navigate("/");
     dispatch(reset());
   }, [user, isError, navigate, dispatch, isSuccess]);
 
   // Submit
   function handleSubmit() {
+    if (password != passwordConfirm) {
+      return setError(true);
+    }
     const userData = { email, password };
     dispatch(userSignUp(userData));
   }
+
+  // toast error handling
+  const customId = "errorId";
+  const notify = () => {
+    toast.error("Incorrect information", {
+      position: "top-center",
+      toastId: customId,
+    });
+  };
+  if (error || isError) {
+    notify();
+  }
+
   return (
     <div className='h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-100'>
+      <ToastContainer />
       {isLoading ? (
-        <p>Loading</p>
+        <Loading />
       ) : (
         <div>
           <img
