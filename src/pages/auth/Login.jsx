@@ -49,7 +49,7 @@ const Login = () => {
             <img
               src='/assets/logo.svg'
               className=' mx-auto h-20  w-auto '
-              alt='image safe'
+              alt='logo'
             />
             {/* <h2 className='mt-6 text-center text-3xl  text-gray-400 '>Login</h2> */}
             <form className='mt-8 space-y-6'>
