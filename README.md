@@ -1,6 +1,6 @@
 # Images Safe
 
-![Image Safe.png](Images%20Saf%20c423a/Image_Safe.png)
+![Image Safe.png](./planning/Image%20Safe.png)
 
 ## Description
 
@@ -36,11 +36,11 @@ To save images on the cloud and access them between devices.
 
 How the user will use the application and the application tree design.
 
-![User Flow](Images%20Saf%20c423a/Artboard__1.png)
+![User Flow](./planning/Artboard%20–%201.png)
 
 User Flow
 
-![Application bird eye view](Images%20Saf%20c423a/App_arch.png)
+![Application bird eye view](./planning/App%20arch.png)
 
 Application bird eye view
 
@@ -52,14 +52,14 @@ Primary Color ⇒ #040B51
 
 Secondary Color ⇒ #19DCDC
 
-![Mobile Design](Images%20Saf%20c423a/Artboard__2.png)
+![Mobile Design](./planning/Artboard%20–%202.png)
 
 Mobile Design
 
-![Web Design](Images%20Saf%20c423a/Artboard__3.png)
+![Web Design](./planning/Artboard%20–%203.png)
 
 Web Design
 
 ## Database design
 
-![ImageSafe DB.png](Images%20Saf%20c423a/ImageSafe_DB.png)
+![ImageSafe DB.png](./planning/ImageSafe%20DB.png)
